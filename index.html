@@ -1,164 +1,278 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>千秩 - 资源访问平台</title>
-    <link rel="stylesheet" href="./styles/public.css">
-    <style>
-        /* 简易内置样式，排版美化，可迁移到public.css */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            font-family: "Microsoft Yahei", sans-serif;
-        }
-        /* 标题区域 */
-        #title {
-            text-align: center;
-            padding: 30px 0;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #666;
-        }
-        #title h1 span {
-            color: #2563eb;
-            font-weight: bold;
-        }
-        /* 导航快捷栏 */
-        .nav-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-        .nav-bar a {
-            padding: 8px 16px;
-            background: #eef2ff;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #2563eb;
-        }
-        .nav-bar a:hover {
-            background: #2563eb;
-            color: #fff;
-        }
-        /* 通用模块样式 */
-        section {
-            margin: 40px 0;
-        }
-        section h2 {
-            padding-bottom: 10px;
-            border-bottom: 1px solid #aaa;
-            margin-bottom: 20px;
-            color: #222;
-        }
-        /* 链接图片容器，自动流式排版 */
-        .link-box {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-        }
-        .link-box a img {
-            width: 320px;
-            max-width: 100%;
-            border-radius: 4px;
-            transition: 0.2s;
-        }
-        .link-box a img:hover {
-            transform: scale(1.03);
-        }
-        /* 文字链接样式 */
-        .text-link {
-            margin-top: 10px;
-        }
-        .text-link a {
-            color: #2563eb;
-        }
-    </style>
+    <title>千秩科技 - 通用技术解决方案供应商</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <!-- 顶部标题区域 -->
-    <div id="title">
-        <h1>欢迎来到<span>千秩</span>资源访问平台!<br>不定期更新~</h1>
+
+    <!-- 低多边形 / 几何矢量 SVG 背景层 -->
+    <div class="bg-decor" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="0,0 300,0 150,200" fill="var(--poly1)" />
+            <polygon points="1200,0 900,0 1050,250" fill="var(--poly2)" />
+            <polygon points="0,800 200,800 100,550" fill="var(--poly3)" />
+            <polygon points="1200,800 1000,800 1100,500" fill="var(--poly4)" />
+            <polygon points="400,0 700,0 550,180" fill="var(--poly2)" opacity="0.6" />
+            <polygon points="500,800 800,800 650,620" fill="var(--poly1)" opacity="0.5" />
+            <polygon points="0,300 150,150 300,300" fill="var(--poly3)" opacity="0.4" />
+            <polygon points="1200,200 1050,100 900,250" fill="var(--poly4)" opacity="0.5" />
+            <polygon points="600,400 800,300 700,500" fill="var(--poly1)" opacity="0.3" />
+            <polygon points="200,600 400,500 300,700" fill="var(--poly2)" opacity="0.4" />
+        </svg>
     </div>
 
-    <!-- 模块快速导航 -->
-    <div class="nav-bar">
-        <a href="#school">校内网页连接</a>
-        <a href="#cs">计算机科学</a>
-        <a href="#mech">机械工程</a>
-        <a href="#elec">电子技术</a>
-        <a href="#practical">实用技术</a>
+    <!-- 主内容容器 -->
+    <div class="content-wrapper">
+
+        <!-- 导航栏 -->
+        <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
+            <div class="navbar-inner">
+                <a href="#" class="navbar-brand" aria-label="千秩科技首页">
+                    <span class="brand-icon">千</span>
+                    <span>千秩科技</span>
+                </a>
+                <ul class="navbar-links" role="menubar">
+                    <li role="none"><a href="#home" role="menuitem" class="active">首页</a></li>
+                    <li role="none"><a href="#cards" role="menuitem">技术栏目</a></li>
+                    <li role="none"><a href="#about" role="menuitem">关于我们</a></li>
+                    <li role="none"><a href="#footer" role="menuitem">联系方式</a></li>
+                </ul>
+                <div class="navbar-search" role="search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="搜索技术栏目..." aria-label="搜索技术栏目" autocomplete="off">
+                </div>
+                <!-- 主题切换按钮 -->
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题" title="切换主题">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero 区域 -->
+        <section class="hero" id="home">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                通用技术解决方案供应商 · 不定期更新
+            </div>
+            <h1>
+                欢迎来到 <span class="highlight">千秩科技</span><br>
+                探索技术的无限可能
+            </h1>
+            <p>
+                我们汇聚计算机科学、机械工程、电子技术与实用工具，打造一站式技术资源导航平台。
+                点击卡片进入对应技术领域，发现精选资源。
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">技术领域</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">精选资源</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">持续更新</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 卡片网格区域 -->
+        <section class="cards-section" id="cards">
+            <div class="section-header">
+                <h2>技术栏目导航</h2>
+                <span class="hint">点击卡片进入对应技术领域</span>
+            </div>
+            <div class="cards-grid" id="cardsGrid">
+                <!-- 卡片 1: 校内网页连接 -->
+                <div class="card" data-id="school" data-title="校内网页连接" data-desc="北化在线 教务系统 校园网 实践教学平台" style="--card-accent: #165DFF;" role="button" tabindex="0" aria-label="进入校内网页连接栏目">
+                    <div class="card-icon c1">🏫</div>
+                    <h3>校内网页连接</h3>
+                    <p>北化在线、教务系统、校园网、实践教学平台等校内资源入口。</p>
+                    <span class="card-arrow">→</span>
+                </div>
+                <!-- 卡片 2: 计算机科学 -->
+                <div class="card" data-id="cs" data-title="计算机科学" data-desc="Kaggle 汇编语言 DeepSeek" style="--card-accent: #36CFC9;" role="button" tabindex="0" aria-label="进入计算机科学栏目">
+                    <div class="card-icon c2">💻</div>
+                    <h3>计算机科学</h3>
+                    <p>数据科学竞赛、汇编语言学习、AI 智能助手等计算机领域资源。</p>
+                    <span class="card-arrow">→</span>
+                </div>
+                <!-- 卡片 3: 电子技术 -->
+                <div class="card" data-id="elec" data-title="电子技术" data-desc="OneNet 物联网平台" style="--card-accent: #F7BA1E;" role="button" tabindex="0" aria-label="进入电子技术栏目">
+                    <div class="card-icon c3">🔌</div>
+                    <h3>电子技术</h3>
+                    <p>物联网平台、嵌入式开发、硬件设计等电子技术领域资源。</p>
+                    <span class="card-arrow">→</span>
+                </div>
+                <!-- 卡片 4: 机械工程 -->
+                <div class="card" data-id="mech" data-title="机械工程" data-desc="持续更新中" style="--card-accent: #722ED1;" role="button" tabindex="0" aria-label="进入机械工程栏目">
+                    <div class="card-icon c4">⚙️</div>
+                    <h3>机械工程</h3>
+                    <p>机械设计、制造工艺、自动化技术等领域资源，持续更新中。</p>
+                    <span class="card-arrow">→</span>
+                </div>
+                <!-- 卡片 5: 实用技术 -->
+                <div class="card" data-id="practical" data-title="实用技术" data-desc="功能测试入口" style="--card-accent: #F53F3F;" role="button" tabindex="0" aria-label="进入实用技术栏目">
+                    <div class="card-icon c5">🛠️</div>
+                    <h3>实用技术</h3>
+                    <p>日常实用工具、测试入口、效率提升等实用技术资源。</p>
+                    <span class="card-arrow">→</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于区域 -->
+        <section id="about" class="about-section">
+            <h2>关于千秩科技</h2>
+            <p>
+                千秩科技致力于为学习者与开发者提供高质量的技术资源导航。
+                我们相信，好的工具与资源能够激发创造力，推动技术进步。
+            </p>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer" id="footer">
+            <p>© 2026 <a href="#">千秩科技</a> · 通用技术解决方案供应商 · 不定期更新~</p>
+            <p class="footer-hint">💡 点击卡片即可进入详情页</p>
+        </footer>
+
     </div>
 
-    <!-- 模块1：校内网页连接 -->
-    <section id="school">
-        <h2>一、校内网页连接</h2>
-        <div class="link-box">
-            <a href="http://course.buct.edu.cn/" target="_blank">
-                <img src="./assets/images/beihuazaixian.png" alt="北化在线" title="北化在线">
-            </a>
-            <a href="http://jwglxt.buct.edu.cn/" target="_blank">
-                <img src="./assets/images/jiaowuguanli.png" alt="教务系统" title="教务系统">
-            </a>
-            <a href="http://tree.buct.edu.cn/" target="_blank">
-                <img src="./assets/images/buctTree.png" alt="校园网" title="校园网">
-            </a>
-            <a href="https://sjcx.buct.edu.cn/" target="_blank">
-                <img src="./assets/images/chuangxinshijian.png" alt="实践教学平台" title="实践教学平台">
-            </a>
-        </div>
-    </section>
-
-    <!-- 模块2：计算机科学 -->
-    <section id="cs">
-        <h2>二、计算机科学</h2>
-        <div class="link-box">
-            <a href="https://www.kaggle.com/" target="_blank">
-                <img src="./assets/images/kaggle.png" alt="数据科学" title="数据科学">
-            </a>
-            <a href="https://github.com/fmw666/Assembly" target="_blank">
-                <img src="./assets/images/assembly.png" alt="汇编语言" title="汇编语言">
-            </a>
-            <a href="https://chat.deepseek.com/" target="_blank">
-                <img src="./assets/images/ds.png" alt="deepseek" title="deepseek">
-            </a>
-        </div>
-    </section>
-
-    <!-- 模块3：机械工程（空白预留拓展） -->
-    <section id="mech">
-        <h2>三、机械工程</h2>
-        <div class="link-box">
-            <p>该模块持续更新中，后续可添加机械建模、仿真、机械设计等相关网站链接</p>
-        </div>
-    </section>
-
-    <!-- 模块4：电子技术 -->
-    <section id="elec">
-        <h2>四、电子技术</h2>
-        <div class="link-box">
-            <a href="https://iot.10086.cn/" target="_blank">
-                <img src="./assets/images/onenet.png" alt="OneNet物联网平台" title="OneNet物联网平台">
-            </a>
-        </div>
-    </section>
-
-    <!-- 模块5：实用技术 -->
-    <section id="practical">
-        <h2>五、实用技术</h2>
-        <div class="link-box">
-            <div class="text-link">
-                <p>功能测试入口：<a href="test.html" target="_blank">测试链接</a></p>
+    <!-- 子页面 Overlay 容器（5个子页面） -->
+    <!-- 子页面 1: 校内网页连接 -->
+    <div class="subpage-overlay" id="overlay-school" role="dialog" aria-modal="true" aria-label="校内网页连接子页面">
+        <div class="subpage-panel">
+            <div class="subpage-header">
+                <button class="back-btn" data-close aria-label="返回首页">←</button>
+                <span class="subpage-icon" style="background:#eff6ff;">🏫</span>
+                <span class="subpage-title">校内网页连接</span>
+            </div>
+            <div class="subpage-body">
+                <p class="subpage-desc">北京化工大学校内常用平台与系统入口。</p>
+                <div class="subpage-links">
+                    <a class="subpage-link-item" href="http://course.buct.edu.cn/" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">📚</span>
+                        <div class="link-info"><h4>北化在线</h4><p>course.buct.edu.cn · 校内课程平台</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                    <a class="subpage-link-item" href="http://jwglxt.buct.edu.cn/" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">📋</span>
+                        <div class="link-info"><h4>教务系统</h4><p>jwglxt.buct.edu.cn · 教务管理系统</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                    <a class="subpage-link-item" href="http://tree.buct.edu.cn/" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">🌐</span>
+                        <div class="link-info"><h4>校园网</h4><p>tree.buct.edu.cn · 校园网络服务</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                    <a class="subpage-link-item" href="https://sjcx.buct.edu.cn/" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">🎓</span>
+                        <div class="link-info"><h4>实践教学平台</h4><p>sjcx.buct.edu.cn · 创新实践平台</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- 子页面 2: 计算机科学 -->
+    <div class="subpage-overlay" id="overlay-cs" role="dialog" aria-modal="true" aria-label="计算机科学子页面">
+        <div class="subpage-panel">
+            <div class="subpage-header">
+                <button class="back-btn" data-close aria-label="返回首页">←</button>
+                <span class="subpage-icon" style="background:#f0fdf4;">💻</span>
+                <span class="subpage-title">计算机科学</span>
+            </div>
+            <div class="subpage-body">
+                <p class="subpage-desc">数据科学、编程语言与人工智能领域精选资源。</p>
+                <div class="subpage-links">
+                    <a class="subpage-link-item" href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">📊</span>
+                        <div class="link-info"><h4>Kaggle</h4><p>kaggle.com · 数据科学竞赛平台</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                    <a class="subpage-link-item" href="https://github.com/fmw666/Assembly" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">🔧</span>
+                        <div class="link-info"><h4>汇编语言</h4><p>github.com · 汇编语言学习资源</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                    <a class="subpage-link-item" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">🤖</span>
+                        <div class="link-info"><h4>DeepSeek</h4><p>chat.deepseek.com · AI 智能助手</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 子页面 3: 电子技术 -->
+    <div class="subpage-overlay" id="overlay-elec" role="dialog" aria-modal="true" aria-label="电子技术子页面">
+        <div class="subpage-panel">
+            <div class="subpage-header">
+                <button class="back-btn" data-close aria-label="返回首页">←</button>
+                <span class="subpage-icon" style="background:#fefce8;">🔌</span>
+                <span class="subpage-title">电子技术</span>
+            </div>
+            <div class="subpage-body">
+                <p class="subpage-desc">物联网与电子工程领域精选资源。</p>
+                <div class="subpage-links">
+                    <a class="subpage-link-item" href="https://iot.10086.cn/" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">📡</span>
+                        <div class="link-info"><h4>OneNet 物联网平台</h4><p>iot.10086.cn · 中国移动物联网开放平台</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 子页面 4: 机械工程 -->
+    <div class="subpage-overlay" id="overlay-mech" role="dialog" aria-modal="true" aria-label="机械工程子页面">
+        <div class="subpage-panel">
+            <div class="subpage-header">
+                <button class="back-btn" data-close aria-label="返回首页">←</button>
+                <span class="subpage-icon" style="background:#fdf2f8;">⚙️</span>
+                <span class="subpage-title">机械工程</span>
+            </div>
+            <div class="subpage-body">
+                <p class="subpage-desc">机械设计、制造与自动化领域资源。</p>
+                <div class="subpage-links">
+                    <div class="subpage-link-item empty">
+                        <span>📝 持续更新中，敬请期待...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 子页面 5: 实用技术 -->
+    <div class="subpage-overlay" id="overlay-practical" role="dialog" aria-modal="true" aria-label="实用技术子页面">
+        <div class="subpage-panel">
+            <div class="subpage-header">
+                <button class="back-btn" data-close aria-label="返回首页">←</button>
+                <span class="subpage-icon" style="background:#fef2f2;">🛠️</span>
+                <span class="subpage-title">实用技术</span>
+            </div>
+            <div class="subpage-body">
+                <p class="subpage-desc">日常实用工具与测试入口。</p>
+                <div class="subpage-links">
+                    <a class="subpage-link-item" href="test.html" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">🧪</span>
+                        <div class="link-info"><h4>测试链接</h4><p>功能测试入口</p></div>
+                        <span class="link-external">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入外部 JS 文件 -->
+    <script src="scripts/app.js" defer></script>
 </body>
 </html>
