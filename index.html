@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>千秩科技 - 通用技术解决方案供应商</title>
-    <link rel="stylesheet" href="styles/public.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 
@@ -261,7 +261,35 @@
             </div>
             <div class="subpage-body">
                 <p class="subpage-desc">日常实用工具与测试入口。</p>
-                <div class="subpage-links">
+                
+                <!-- 图片压缩工具 -->
+                <div class="image-compressor">
+                    <div class="compressor-header">
+                        <h3>📸 图片压缩工具</h3>
+                        <p>选择本地图片，调节压缩质量，实时预览效果</p>
+                    </div>
+                    
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="imageInput" accept="image/*" multiple hidden>
+                        <div class="upload-content">
+                            <span class="upload-icon">📁</span>
+                            <p>点击选择图片或拖拽图片到此处</p>
+                            <span class="upload-hint">支持 JPG、PNG、WebP 格式，可多选</span>
+                        </div>
+                    </div>
+                    
+                    <div class="compress-controls" id="compressControls" style="display:none;">
+                        <div class="quality-control">
+                            <label for="qualitySlider">压缩质量：<span id="qualityValue">80</span>%</label>
+                            <input type="range" id="qualitySlider" min="10" max="100" value="80">
+                        </div>
+                        <button class="compress-btn" id="compressBtn">开始压缩</button>
+                    </div>
+                    
+                    <div class="image-list" id="imageList"></div>
+                </div>
+                
+                <div class="subpage-links" style="margin-top: 20px;">
                     <a class="subpage-link-item" href="test.html" target="_blank" rel="noopener noreferrer">
                         <span class="link-icon">🧪</span>
                         <div class="link-info"><h4>测试链接</h4><p>功能测试入口</p></div>
